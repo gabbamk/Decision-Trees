@@ -1,10 +1,10 @@
 # Decision-Trees-Random-Forests
 
+Kickstarter Status Classifier
 
+The project was made to show understanding of the Decision Trees topic for the Sistemas Inteligentes class for the Ago-Dic 2019 semester.
 
 A decision tree is a 'support tool' for visualizing decisions and their possible consequences by presenting them in a tree-like graph model (branches stem from 'parent' nodes up until a common root). Thanks to the evolution and convergence of statistical analysis and computational sciences we can model a decision tree in order to find patterns and predict instances in an actual applicable way. 
-
-
 
 
 
@@ -17,14 +17,13 @@ create a decision tree model that can be trained with a certain dataset in order
 In data science and machine learning, decision trees are a supervised non-parametric learning method used for classification and regression. 
 
 
-
 Crowdfunding is the practice of funding a project by raising 'small' amounts of money from a large number of people. Kickstarter is an online crowdfunding platform where projects get funded by the community in exchange of rewards. 
 
-I found a very complete dataset of the platform when browsing Kaggle. The raw .csv data looks like this:
+I found a rather big dataset of the platform when browsing Kaggle. The raw .csv data looks like this:
 
 ![dataset](dataset_example.JPG)
 
-On a first look, we see the website ID, name of the project, category, the date it was launched and the deadline, how much money was pledged, the state of the project, the backers and the country. The feature I'm most interested on is the <b>State</b>, so we will have to set this as our output <i>'Y'</i>. The rest of our columns, <i>'X'</i>, will be used to train the model. The project's state will fall in one of these 6 categories: ['canceled', 'failed', 'live', 'successful', 'suspended', 'undefined']. 
+The dataset has more than 300,000 samples, which could potentially give us a rather accurate model. On a first look, we see the website ID, name of the project, category, the date it was launched and the deadline, how much money was pledged, the state of the project, the backers and the country. The feature I'm most interested on is the <b>State</b>, so we will have to set this as our output <i>'Y'</i>. The rest of our columns, <i>'X'</i>, will be used to train the model. The project's state will fall in one of these 6 categories: ['canceled', 'failed', 'live', 'successful', 'suspended', 'undefined']. 
 
 Similar but more complex exercises found on the web seem to add more attributes to the data, ranging from user interaction (shares and comments by the backers) to how many Facebook friends the project creator has. This did seem to up the accuracy with which their models could predict results. Additional data that I propose as helpful could include historical funding data, the buzz the project has on social media, a linguistic analysis of the working title and perhaps an analysis of the 'pitch elements' (such as the impact of the promotional video and how the description of the project is worded). For the purpose of this delivery I'll try to get a model as good as possible with the data provided by this dataset.
 
