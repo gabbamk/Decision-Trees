@@ -3,7 +3,11 @@
 #Kickstarter Status Classifier
 
 ##Abstract
-Documentation for the Decision Trees hand in for Tec Campus Querétaro Sistemas Inteligentes Ago-Dic 2019 as a Kickstarter status classifier. The code cleans the dataset (and splits it into test and training sets), generates or validates a decision tree with the set parameters, logs the accuracy, prints a pdf with the resulting tree and saves the model in a pickle file. [A Kickstarter dataset found in Kaggle](https://www.kaggle.com/kemical/kickstarter-projects) is used with the intention of being able to predict the success of a project with a reasonable accuracy. The Scikit-Learn libraries were used to model the tree, data handling was done in pandas, the pickle library was used to save and load the models. Results show that using gini criterion, a <i>max_depth</i> of 10 and basically the preset settings gave the best results for prediction (with 69% accuracy).
+Documentation for the Decision Trees hand in for Tec Campus Querétaro Sistemas Inteligentes Ago-Dic 2019 as a Kickstarter status classifier. The code cleans the dataset (and splits it into test and training sets), generates or validates a decision tree with the set parameters, logs the accuracy, prints a pdf with the resulting tree and saves the model in a pickle file. [A Kickstarter dataset found in Kaggle](https://www.kaggle.com/kemical/kickstarter-projects) is used with the intention of being able to predict the success of a project with a reasonable accuracy. Results show that using gini criterion, a <i>max_depth</i> of 10 and basically the preset settings gave the best results for prediction (with 66% accuracy).
+
+![tree_depth_7](tree_depth_7.png)
+
+##Introduction
 
 A decision tree is a 'support tool' for visualizing decisions and their possible consequences by presenting them in a tree-like graph model (branches stem from 'parent' nodes up until a common root). Thanks to the evolution and convergence of statistical analysis and computational sciences we can model a decision tree in order to find patterns and predict instances in an applicable way. 
 
@@ -17,6 +21,8 @@ In data science and machine learning, decision trees are a supervised non-parame
 
 
 Crowdfunding is the practice of funding a project by raising 'small' amounts of money from a large number of people. Kickstarter is an online crowdfunding platform where projects get funded by the community in exchange of rewards. 
+
+##Development
 
 I found a rather big dataset of the platform when browsing Kaggle. The raw .csv data looks like this:
 
