@@ -4,9 +4,7 @@ Kickstarter Status Classifier
 
 The project was made to show understanding of the Decision Trees topic for the Sistemas Inteligentes class for the Ago-Dic 2019 semester.
 
-A decision tree is a 'support tool' for visualizing decisions and their possible consequences by presenting them in a tree-like graph model (branches stem from 'parent' nodes up until a common root). Thanks to the evolution and convergence of statistical analysis and computational sciences we can model a decision tree in order to find patterns and predict instances in an actual applicable way. 
-
-
+A decision tree is a 'support tool' for visualizing decisions and their possible consequences by presenting them in a tree-like graph model (branches stem from 'parent' nodes up until a common root). Thanks to the evolution and convergence of statistical analysis and computational sciences we can model a decision tree in order to find patterns and predict instances in an applicable way. 
 
 These branch nodes represent a conditional 'true' or 'false' selection of a certain dataset parameter which then creates a corresponding branch to the next conditional node in order to . This means that the nodes of a predictive decision tree
 
@@ -32,14 +30,21 @@ Since the dates found in the dataset have some weird formatting, I used the alre
 I used the pandas library to get experience managing dataframes in the Python environment (instead of manually editing the Excel file). This let me change the code parameters and tune the data to experiment with different models and datasets quickly. Many cells were missing and the dataset had some unusable, erroneous data (ej. numbers in the category and main_category columns, which are only expected to have strings). The split_csv() and prepare_dataset() functions I defined clean up the data by removing empty cells or invalid terms as well as dropping columns as needed.
 
 
-
 After loading the .CSV file
 
 
 Since we are going to validate our model after training it (more on this later), it's best if we shuffle all of our rows (so we can make sure our database isn't biased) and split our entire dataset in two parts, allowing us to use 90% of the data for a training set and 10% for a test set.
 
-
 `
 `
 
-In order to translate categorical into numerical data I used One Hot Encoding with the function 'get_dummies()' in order to have the model working properly. In the case of the output, I tried both using strings for categories as well as an equivalent number to see if it made any difference. 
+In order to translate categorical into numerical data I used One Hot Encoding with the function 'get_dummies()' in order to have the model working properly. In the case of the output, I tried both using strings for categories as well as an equivalent number to see if it made any difference (found none).
+
+
+Once I fit my first model, I realized that I would be running multiple tests in order to find the most suitable hyperparameters for my tree and , so I had to find a way to save and load my models for future use. I also implemented a logger so I could have the historical data of the models run.
+
+It seems to be that my optimal max_depth is 10, as going under drops the accuracy and anything above that overfits the model.
+
+After dropping the 'canceled', 'live' and 'suspended' categories, the accuracy of my model went up by 10% which is huge:
+
+I noticed that tweaking the criterion, minimun samples per split and minimun samples per split did not help my model (the accuracy only went down). Perhaps in the future when I'm more experienced with these kind of tools I'll be able to find better parameters without dropping accuracy or overfitting the model.
