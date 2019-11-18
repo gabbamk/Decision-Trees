@@ -1,8 +1,9 @@
 # Decision-Trees-Random-Forests
 
-Kickstarter Status Classifier
+#Kickstarter Status Classifier
 
-The project was made to show understanding of the Decision Trees topic for the Sistemas Inteligentes class for the Ago-Dic 2019 semester.
+##Abstract
+Documentation for the Decision Trees hand in for Tec Campus Querétaro Sistemas Inteligentes Ago-Dic 2019 as a Kickstarter status classifier. The code cleans the dataset (and splits it into test and training sets), generates or validates a decision tree with the set parameters, logs the accuracy, prints a pdf with the resulting tree and saves the model in a pickle file. [A Kickstarter dataset found in Kaggle](https://www.kaggle.com/kemical/kickstarter-projects) is used with the intention of being able to predict the success of a project with a reasonable accuracy. The Scikit-Learn libraries were used to model the tree, data handling was done in pandas, the pickle library was used to save and load the models. Results show that using gini criterion, a <i>max_depth</i> of 10 and basically the preset settings gave the best results for prediction (with 69% accuracy).
 
 A decision tree is a 'support tool' for visualizing decisions and their possible consequences by presenting them in a tree-like graph model (branches stem from 'parent' nodes up until a common root). Thanks to the evolution and convergence of statistical analysis and computational sciences we can model a decision tree in order to find patterns and predict instances in an applicable way. 
 
@@ -21,7 +22,7 @@ I found a rather big dataset of the platform when browsing Kaggle. The raw .csv 
 
 ![datasetexample](datasetexample.png)
 
-The dataset has more than 300,000 samples, which could potentially give us a rather accurate model. On a first look, we see the website ID, name of the project, category, the date it was launched and the deadline, how much money was pledged, the state of the project, the backers and the country. The feature I'm most interested on is the <b>State</b>, so we will have to set this as our output <i>'Y'</i>. The rest of our columns, <i>'X'</i>, will be used to train the model. The project's state will fall in one of these 6 categories: ['canceled', 'failed', 'live', 'successful', 'suspended', 'undefined']. 
+The dataset has more than 300,000 samples, which could potentially give us a rather accurate model. On a first look, we see the website ID, name of the project, category, the date it was launched and the deadline, how much money was pledged, the state of the project, the backers and the country. The feature I'm most interested on is the <b>State</b>, so we will have to set this as our output <i>'Y'</i>. The rest of our columns, <i>'X'</i>, will be used to train the model. The project's state can fall in one of these 6 categories: ['canceled', 'failed', 'live', 'successful', 'suspended', 'undefined']. I noticed after running many models however that the categories canceled, failed and suspended result in very noisy and inaccurate classifications.
 
 Similar but more complex exercises found on the web seem to add more attributes to the data, ranging from user interaction (shares and comments by the backers) to how many Facebook friends the project creator has. This did seem to up the accuracy with which their models could predict results. Additional data that I propose as helpful could include historical funding data, the buzz the project has on social media, a linguistic analysis of the working title and perhaps an analysis of the 'pitch elements' (such as the impact of the promotional video and how the description of the project is worded). For the purpose of this delivery I'll try to get a model as good as possible with the data provided by this dataset.
 
@@ -35,7 +36,6 @@ After loading the .CSV file
 
 Since we are going to validate our model after training it (more on this later), it's best if we shuffle all of our rows (so we can make sure our database isn't biased) and split our entire dataset in two parts, allowing us to use 90% of the data for a training set and 10% for a test set.
 
-`
 `
 
 In order to translate categorical into numerical data I used One Hot Encoding with the function 'get_dummies()' in order to have the model working properly. In the case of the output, I tried both using strings for categories as well as an equivalent number to see if it made any difference (found none).
