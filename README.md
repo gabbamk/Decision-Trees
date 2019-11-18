@@ -21,7 +21,7 @@ Crowdfunding is the practice of funding a project by raising 'small' amounts of 
 
 I found a rather big dataset of the platform when browsing Kaggle. The raw .csv data looks like this:
 
-![dataset example](dataset example.png)
+![datasetexample](datasetexample.png)
 
 The dataset has more than 300,000 samples, which could potentially give us a rather accurate model. On a first look, we see the website ID, name of the project, category, the date it was launched and the deadline, how much money was pledged, the state of the project, the backers and the country. The feature I'm most interested on is the <b>State</b>, so we will have to set this as our output <i>'Y'</i>. The rest of our columns, <i>'X'</i>, will be used to train the model. The project's state will fall in one of these 6 categories: ['canceled', 'failed', 'live', 'successful', 'suspended', 'undefined']. 
 
