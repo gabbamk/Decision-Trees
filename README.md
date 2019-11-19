@@ -13,3 +13,6 @@ pickle
 graphviz 0.13.2
 
 sklearn 
+
+
+Dataset link: https://www.kaggle.com/kemical/kickstarter-projects
