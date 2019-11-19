@@ -1,23 +1,15 @@
 Requirements:
 
-pandas
+pandas 0.24.2
 
-numpy
+numpy 1.16.4
 
-os
+matplotlib 3.1.0
 
-matplotlib.pyplot
+idna 2.8
 
-idna
+pickle 
 
-sys
+graphviz 0.13.2
 
-pickle
-
-graphviz
-
-sklearn
-
-sklearn.model_selection
-
-operator
+sklearn 
