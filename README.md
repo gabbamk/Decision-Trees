@@ -14,5 +14,6 @@ graphviz 0.13.2
 
 sklearn 
 
+read Kickstarter Status Classifier.pdf for more information.
 
 Dataset link: https://www.kaggle.com/kemical/kickstarter-projects
